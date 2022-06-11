@@ -1,8 +1,15 @@
 package com.GenInc;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Here will be calc");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите число");
+        String line = scanner.nextLine();
+
+
+        System.out.println(line);
     }
 }
