@@ -6,15 +6,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Введите выражение");
-        String line = scanner.nextLine();
-        line = line.replace(" ", "");
-        String fnum;
-        String snum;
+        String fnum = "";
+        String snum = "";
+        String operation;
         Double result;
+        String line = LineNormalization.norLine;
+
+
+
+
+
+
+
         char[] arrLine = line.toCharArray();
-        if ((arrLine[0] == '-') && ((arrLine[1] == 'I') ||
+        if ((arrLine[0] == '-') && ((Character.isLetter(arrLine[1])) ||
                                     (arrLine[1] == 'V') ||
                                     (arrLine[1] == 'X') ||
                                     (arrLine[1] == 'l') ||
@@ -29,7 +35,7 @@ public class Main {
                     (arrLine[0] == 'C') ||
                     (arrLine[0] == 'D') ||
                     (arrLine[0] == 'M')) {
-            System.out.println("it's roman");
+            System.out.println(NumberConverter.romanToArabic(fnum));
         } else {
             for (int i = 1; i < arrLine.length; i++) {
                 switch (line.charAt(i)) {
@@ -38,22 +44,27 @@ public class Main {
                         snum = line.substring(i + 1);
                         result = Double.parseDouble(fnum) + Double.parseDouble(snum);
                         System.out.println(result);
+                        break;
                     case ('-'):
                         fnum = line.substring(0, i);
                         snum = line.substring(i + 1);
                         result = Double.parseDouble(fnum) - Double.parseDouble(snum);
                         System.out.println(result);
+                        break;
                     case ('*'):
                         fnum = line.substring(0, i);
                         snum = line.substring(i + 1);
                         result = Double.parseDouble(fnum) * Double.parseDouble(snum);
                         System.out.println(result);
+                        break;
                     case ('/'):
                         fnum = line.substring(0, i);
                         snum = line.substring(i + 1);
                         result = Double.parseDouble(fnum) / Double.parseDouble(snum);
                         System.out.println(result);
+                        break;
                 }
+
             }
         }
     }
