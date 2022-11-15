@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class LineNormalization {
 
-    public static Scanner scanner = new Scanner(System.in);
-    public static String norLine = scanner.nextLine();
+    private static Scanner scanner = new Scanner(System.in);
+    private static String inputLine = scanner.nextLine();
+    public static String trimmedLine = inputLine.replaceAll(" ","");
+
 }

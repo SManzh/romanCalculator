@@ -1,7 +1,5 @@
 package com.GenInc;
 
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -11,12 +9,8 @@ public class Main {
         String snum = "";
         String operation;
         Double result;
-        String line = LineNormalization.norLine;
-
-
-
-
-
+        String line;
+        line = LineNormalization.trimmedLine;
 
 
         char[] arrLine = line.toCharArray();
