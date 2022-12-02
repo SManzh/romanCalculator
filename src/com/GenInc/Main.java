@@ -21,7 +21,7 @@ public class Main {
             }
         }
 
-        // if action not found, stop program
+        // if action operator not found, stop program
         if (actionIndex == -1) {
             System.out.println("Incorrect expression!");
             return;
